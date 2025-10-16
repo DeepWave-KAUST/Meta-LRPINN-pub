@@ -14,10 +14,10 @@ This repository is organized as follows:
 To ensure reproducibility, we provide the the data set for meta-train and meta-test stages, and the meta-initialization model for Meta-LRPINN. 
 
 * **Meta-training and Meta-testing data set**
-Download the meta-training and meta-testing data set [here](https://kaust.sharepoint.com/sites/M365_Deepwave_Documents/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=BiJZyw&CID=91cc5ce7%2D0cbb%2D4cd4%2D8e52%2Ddf708ab9d986&FolderCTID=0x0120009F9BE65BA42D194BBEFB62CBD730AF6A&id=%2Fsites%2FM365%5FDeepwave%5FDocuments%2FShared%20Documents%2FRestricted%20Area%2FREPORTS%2FDW0062%2Fdata). Then, extract the contents to `dataset/metatrain/` and `dataset/metatest/`, respectively.
+Download the meta-training and meta-testing data set [here](https://drive.google.com/file/d/1uadCF1T0_qWmUhvLG_Ba8044reMbvM6B/view?usp=drive_link). Then, extract the contents to `dataset/metatrain/` and `dataset/metatest/`, respectively.
 
 * **Meta-initialization model**
-Download the meta-initialization neural network model [here](https://kaust.sharepoint.com/sites/M365_Deepwave_Documents/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=BiJZyw&CID=91cc5ce7%2D0cbb%2D4cd4%2D8e52%2Ddf708ab9d986&FolderCTID=0x0120009F9BE65BA42D194BBEFB62CBD730AF6A&id=%2Fsites%2FM365%5FDeepwave%5FDocuments%2FShared%20Documents%2FRestricted%20Area%2FREPORTS%2FDW0062%2Fdata%2Fmeta%5Ftrained%2Epth&parent=%2Fsites%2FM365%5FDeepwave%5FDocuments%2FShared%20Documents%2FRestricted%20Area%2FREPORTS%2FDW0062%2Fdata). Then, extract the contents to `/checkpoints/metatrain/`.
+Download the meta-initialization neural network model [here](https://drive.google.com/file/d/1wxyn9gDa23iT1Dysh4QUJnFQGSGIdoRd/view?usp=drive_link). Then, extract the contents to `/checkpoints/metatrain/`.
 
 ## Getting started :space_invader: :robot:
 To ensure reproducibility of the results, we suggest using the `environment.yml` file when creating an environment.
