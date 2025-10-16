@@ -1,8 +1,6 @@
 ![LOGO](https://github.com/DeepWave-Kaust/Meta-LRPINN/blob/main/asset/logo.jpg)
 
-Reproducible material for **DW0062: Multi-frequency wavefield solutions for variable velocity models using meta-learning enhanced low-rank physics-informed neural network - Shijun Cheng and Tariq Alkhalifah.**
-
-[Click here](https://kaust.sharepoint.com/:f:/r/sites/M365_Deepwave_Documents/Shared%20Documents/Restricted%20Area/REPORTS/DW0062?csf=1&web=1&e=m9n2TZ) to access the Project Report. Authentication to the _Restricted Area_ filespace is required.
+Official reproducible material for **Multi-frequency wavefield solutions for variable velocity models using meta-learning enhanced low-rank physics-informed neural network - Shijun Cheng and Tariq Alkhalifah.**
 
 # Project structure
 This repository is organized as follows:
