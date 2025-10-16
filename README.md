@@ -1,24 +1,25 @@
-![LOGO](https://github.com/DeepWave-Kaust/Project-Template/blob/main/asset/logo.png)
+![LOGO](https://github.com/DeepWave-Kaust/Meta-LRPINN/blob/main/asset/logo.jpg)
 
-Reproducible material for **XXX - Author M., Author M., Author C.**
+Reproducible material for **DW0062: Multi-frequency wavefield solutions for variable velocity models using meta-learning enhanced low-rank physics-informed neural network - Shijun Cheng and Tariq Alkhalifah.**
 
-[Click here](https://kaust.sharepoint.com/:f:/r/sites/M365_Deepwave_Documents/Shared%20Documents/Restricted%20Area/DWxxxxxxxx) to access the Project Report. Authentication to the _Restricted Area_ filespace is required.
+[Click here](https://kaust.sharepoint.com/:f:/r/sites/M365_Deepwave_Documents/Shared%20Documents/Restricted%20Area/REPORTS/DW0062?csf=1&web=1&e=m9n2TZ) to access the Project Report. Authentication to the _Restricted Area_ filespace is required.
 
 # Project structure
 This repository is organized as follows:
 
-* :open_file_folder: **package**: python library containing routines for ....;
+* :open_file_folder: **metalrpinn**: python code containing routines for Meta-LRPINN;
 * :open_file_folder: **asset**: folder containing logo;
-* :open_file_folder: **data**: folder containing data (or instructions on how to retrieve the data
-* :open_file_folder: **notebooks**: set of jupyter notebooks reproducing the experiments in the paper (see below for more details);
-* :open_file_folder: **scripts**: set of python scripts used to run multiple experiments ...
+* :open_file_folder: **data**: folder to store dataset;
+* :open_file_folder: **scripts**: set of python scripts for reproducing the meta-train and meta-test examples
 
-## Notebooks
-The following notebooks are provided:
+## Supplementary files
+To ensure reproducibility, we provide the the data set for meta-train and meta-test stages, and the meta-initialization model for Meta-LRPINN. 
 
-- :orange_book: ``X1.ipynb``: notebook performing ...;
-- :orange_book: ``X2.ipynb``: notebook performing ...
+* **Meta-training and Meta-testing data set**
+Download the meta-training and meta-testing data set [here](https://kaust.sharepoint.com/sites/M365_Deepwave_Documents/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=BiJZyw&CID=91cc5ce7%2D0cbb%2D4cd4%2D8e52%2Ddf708ab9d986&FolderCTID=0x0120009F9BE65BA42D194BBEFB62CBD730AF6A&id=%2Fsites%2FM365%5FDeepwave%5FDocuments%2FShared%20Documents%2FRestricted%20Area%2FREPORTS%2FDW0062%2Fdata). Then, extract the contents to `dataset/metatrain/` and `dataset/metatest/`, respectively.
 
+* **Meta-initialization model**
+Download the meta-initialization neural network model [here](https://kaust.sharepoint.com/sites/M365_Deepwave_Documents/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=BiJZyw&CID=91cc5ce7%2D0cbb%2D4cd4%2D8e52%2Ddf708ab9d986&FolderCTID=0x0120009F9BE65BA42D194BBEFB62CBD730AF6A&id=%2Fsites%2FM365%5FDeepwave%5FDocuments%2FShared%20Documents%2FRestricted%20Area%2FREPORTS%2FDW0062%2Fdata%2Fmeta%5Ftrained%2Epth&parent=%2Fsites%2FM365%5FDeepwave%5FDocuments%2FShared%20Documents%2FRestricted%20Area%2FREPORTS%2FDW0062%2Fdata). Then, extract the contents to `/checkpoints/metatrain/`.
 
 ## Getting started :space_invader: :robot:
 To ensure reproducibility of the results, we suggest using the `environment.yml` file when creating an environment.
@@ -27,16 +28,48 @@ Simply run:
 ```
 ./install_env.sh
 ```
-It will take some time, if at the end you see the word `Done!` on your terminal you are ready to go. 
-
-Remember to always activate the environment by typing:
+It will take some time, if at the end you see the word `Done!` on your terminal you are ready to go. Activate the environment by typing:
 ```
-conda activate my_env
+conda activate meta-lrpinn
 ```
 
-**Disclaimer:** All experiments have been carried on a Intel(R) Xeon(R) CPU @ 2.10GHz equipped with a single NVIDIA GEForce RTX 3090 GPU. Different environment 
-configurations may be required for different combinations of workstation and GPU.
+After that you can simply install your package:
+```
+pip install .
+```
+or in developer mode:
+```
+pip install -e .
+```
+
+## Scripts :page_facing_up:
+When you have downloaded the supplementary files and have installed the environment, you can entry the scripts file folder and run demo. We provide two scripts which are responsible for meta-train and meta-test examples.
+
+For meta-train, you can directly run:
+```
+sh run_metatrain.sh
+```
+
+For meta-test, you can directly run:
+```
+sh run_metatest.sh
+```
+**Note:** When you run demo for meta-test, you need open the `metalrpinn/meta_test.py` file to specify the path for meta initialization model. Here, we have provided a meta-initialization model in supplementary file, you can directly load meta-initialization model to perform meta-test.
+
+If you need to compare with a randomly initialized network, you can comment out lines 52 in the `metalrpinn/meta_test.py` file as follows
+```
+# meta.load_state_dict(torch.load(dir_meta, map_location=device))
+```
+and then run:
+```
+sh run_metatest.sh
+```
+
+**Note:** We emphasize that the training logs for meta-train and meta-test are saved in the `runs/metatrain` and `runs/metatest` file folder, respectively. You can use the `tensorboard --logdir=./` or extract the log to view the changes of the metrics as a function of epoch.
+
+**Disclaimer:** All experiments have been carried on a Intel(R) Xeon(R) CPU @ 2.10GHz equipped with a single NVIDIA GEForce A100 GPU. Different environment 
+configurations may be required for different combinations of workstation and GPU. Due to the high memory consumption during the meta training phase, if your graphics card does not support large batch task training, please reduce the configuration value of args (`args.ntask`) in the `metalrpinn/meta_train.py` file.
 
 ## Cite us 
-DWXXX - Author1 et al. (2022) Report title.
+DW0062 - Cheng and Alkhalifah. (2024) Multi-frequency wavefield solutions for variable velocity models using meta-learning enhanced low-rank physics-informed neural network.
 

@@ -3,14 +3,14 @@ requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "project-name-here"
+name = "Meta-LRPINN"
 authors = [
-    {name = "Full Name", email = "first.lastname@kaust.edu.sa"},
+    {name = "Shijun Cheng", email = "shijun.cheng@kaust.edu.sa"},
 ]
-description = "Short description here"
+description = "Multi-frequency wavefield solutions for variable velocity models using meta-learning enhanced low-rank physics-informed neural network"
 readme = "README.md"
 requires-python = ">=3.8"
-keywords = ["inverse problems", "seismic"]
+keywords = ["Seismic modeling", "PINN", "Low-rank", "Meta-learning"]
 license = {text = "BSD 3-Clause License"}
 classifiers = [
         "Intended Audience :: Science/Research",
