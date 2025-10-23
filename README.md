@@ -81,5 +81,3 @@ configurations may be required for different combinations of workstation and GPU
     doi = {10.1093/gji/ggaf417},
     url = {https://doi.org/10.1093/gji/ggaf417},
 }
-
-
