@@ -68,6 +68,18 @@ sh run_metatest.sh
 **Disclaimer:** All experiments have been carried on a Intel(R) Xeon(R) CPU @ 2.10GHz equipped with a single NVIDIA GEForce A100 GPU. Different environment 
 configurations may be required for different combinations of workstation and GPU. Due to the high memory consumption during the meta training phase, if your graphics card does not support large batch task training, please reduce the configuration value of args (`args.ntask`) in the `metalrpinn/meta_train.py` file.
 
-## Cite us 
-DW0062 - Cheng and Alkhalifah. (2024) Multi-frequency wavefield solutions for variable velocity models using meta-learning enhanced low-rank physics-informed neural network.
+## Cite us
+```bibtex
+@article{chengs2025metalrpinn,
+    author = {Cheng, Shijun and Alkhalifah, Tariq},
+    title = {Multi-frequency wavefield solutions for variable velocity models using meta-learning enhanced low-rank physics-informed neural network},
+    journal = {Geophysical Journal International},
+    pages = {ggaf417},
+    year = {2025},
+    month = {10},
+    issn = {1365-246X},
+    doi = {10.1093/gji/ggaf417},
+    url = {https://doi.org/10.1093/gji/ggaf417},
+}
+
 
